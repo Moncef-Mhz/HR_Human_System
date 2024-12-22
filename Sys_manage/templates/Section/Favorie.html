@@ -1,7 +1,28 @@
-{% include '../layout/head.html' %}
-</head>
-<body>
-    <h1 class="m-2">{{PageTitle | title}}</h1>
-    {% include '../layout/navigations.html' %}
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ PageTitle }}</title>
+    {% include "../layout/head.html" %}
+    <style>
+      .main-content {
+        margin-left: 240px;
+        padding: 20px;
+      }
+      @media (max-width: 991.98px) {
+        .main-content {
+          margin-left: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    {% include "../layout/navigations.html" %}
+    <div class="main-content">
+      {% block content %}
+      <h1 class="m-2">{{ PageTitle|title }}</h1>
+      {% endblock %}
+    </div>
+  </body>
 </html>

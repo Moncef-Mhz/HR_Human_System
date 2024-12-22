@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ PageTitle }}</title>
-    {% load bootstrap5 %}
-    {% bootstrap_css %}
+    {% load bootstrap5 static %} {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
     {% bootstrap_javascript %}
+  </body>
+</html>
