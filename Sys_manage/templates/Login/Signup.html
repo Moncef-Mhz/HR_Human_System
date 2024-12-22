@@ -1,0 +1,33 @@
+{% include '../layout/head.html' %}
+</head>
+
+<body>
+    <main class="vh-100 ">
+        <form class=" m-10 login-form d-flex justify-content-center align-items-center flex-column" action="{% url 'SignUp' %}" method="post" novalidate> 
+            {% csrf_token %}
+            {% if error %}
+            <p class="text-danger bg-danger-subtle m-2 text-center p-2">
+                Please enter valid Email or Password !
+            </p>
+            {% endif %}git 
+            <div class="col-md-4 mt-2">
+                <label for="email" class="mt-1">E-Mail</label>
+                <div class="input-group has-validation">
+                    <input type="email" name="email" id="email" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                </div>
+            </div>
+            <div class="col-md-4 mt-2">
+                <label for="password" class="mt-1">Password</label>
+                <div class="input-group has-validation">
+                    <input type="password" name="password" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-primary custom-btn mt-4 shadow-lg" type="submit">
+                    Signup
+                </button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
